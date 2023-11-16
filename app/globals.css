@@ -1,4 +1,88 @@
 :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --background: rgb(206, 206, 206);
+  --text-primary: rgb(63, 63, 63);
+  --text-secondary: royalblue;
+  --accent: purple;
+}
+[data-theme="dark"] {
+  --background: rgb(63, 63, 63);
+  --text-primary: rgb(215, 215, 215);
+  --text-secondary: grey;
+  --accent: darkred;
+
+}
+body {
+  margin: 0;
+}
+.App {
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: large;
+  font-weight: bold;
+  /* transition: all .5s; */
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+
+}
+.testglobal {
+  color: red;
+}
+button {
+  color: var(--text-primary);
+  background-color: var(--background);
+  border: 2px var(--text-primary) solid;
+  float: right;
+  transition: all .5s;
+}
+h1 {
+  margin: 0;
+}
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.playerCard {
+  height: 200px;
+  width: 100px;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+}
+.playersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 50%;
+  margin: auto;
+}
+
+
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +188,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
