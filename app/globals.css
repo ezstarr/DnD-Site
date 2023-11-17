@@ -15,14 +15,42 @@
   --accent: purple;
 }
 [data-theme="dark"] {
-  --background: rgb(63, 63, 63);
+  --background: black;
   --text-primary: rgb(215, 215, 215);
   --text-secondary: grey;
   --accent: darkred;
-
+}
+[data-theme="pink"] {
+  --background: #360a2a;
+  --text-primary: rgb(215, 215, 215);
+  --text-secondary: pink;
+  --accent: rgb(206, 48, 187);
 }
 body {
+  background-color: var(--background);
+  color: var(--text-primary);
   margin: 0;
+  font-size: 1rem;
+}
+label {
+  display: inline-block;
+  padding: .3rem;
+}
+input, button {
+  border: 0;
+  font-size: .8rem;
+  border-radius: 8px;
+  padding: .3rem .5rem;
+  margin: .3rem;
+  height: 1.5rem;
+}
+input[type="submit"] {
+  border: 0;
+  font-size: .8rem;
+  border-radius: 8px;
+  padding: .6rem .8rem;
+  background-color: pink;
+  height: 100%;
 }
 .App {
   color: var(--text-primary);

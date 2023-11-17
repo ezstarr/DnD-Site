@@ -8,7 +8,7 @@ const UserForm = () => {
   const [formData, setFormData] = useState({})
   const [errorMessage, setErrorMessage] = useState("")
 
-  const handleChange = () => {
+  const handleChange = (e) => {
     const value = e.target.value
     const name = e.target.name
     setFormData((prevState) => ({
@@ -37,14 +37,26 @@ const UserForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        method="post">
+        method="post"
+      >
         <h1>Create New User</h1>
-        <label>Username</label>
-        <input id="name" 
-          name="name" 
-          onChange={handleChange} 
-          requried={true}
+        <label>Full Name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          onChange={handleChange}
+          required={true}
           value={formData.name}
+        />
+        <label>Email</label>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          onChange={handleChange}
+          required={true}
+          value={formData.email}
         />
         <label>Password</label>
         <input
@@ -54,12 +66,15 @@ const UserForm = () => {
           onChange={handleChange}
           required={true}
           value={formData.password}
+
         />
         <input
           type="submit"
           value="Create User"
         />
       </form>
+      <p>{errorMessage}</p>
     </>
   )
 }
+export default UserForm;

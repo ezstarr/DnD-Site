@@ -3,7 +3,7 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      Home
+      Home - is this a child AKA page
     </div>
   )
 }

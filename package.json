@@ -14,8 +14,10 @@
     "monodb": "^1.5.1",
     "next": "14.0.2",
     "next-auth": "^4.24.5",
+    "next-themes": "^0.2.1",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "use-local-storage": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^8",
