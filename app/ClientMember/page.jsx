@@ -15,8 +15,13 @@ const Member = () => {
   return (
     <div>
       <h1>Member Client Session</h1>
+      this is a client-side page.
       <p>{session?.user?.name}</p>
       <p>{session?.user?.role}</p>
+
+      <ul>
+        <li>understand where the auth is coming from, how to get usernames</li>
+      </ul>
     </div>
   )
 }

@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { options } from "../api/auth/[...nextauth]/options";
+import { authOptions } from "../api/auth/[...nextauth]/route";
 
 const Nav = async () => {
-  const session = await getServerSession(options);
+  const session = await getServerSession(authOptions);
   return (
     <header>
 
-      <nav className="nav">
-        <div>
+      <nav>
+        <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
           <Link href="/">Home</Link>
           <Link href="/CreateUser">Create User</Link>
           <Link href="/ClientMember">Client Member</Link>

@@ -66,6 +66,20 @@ input[type="submit"] {
 .testglobal {
   color: red;
 }
+.playerCard {
+  height: 200px;
+  width: 100px;
+  border: 1px solid grey;
+  border-radius: 5px;
+
+}
+.playersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 50%;
+  margin: auto;
+}
 button {
   color: var(--text-primary);
   background-color: var(--background);

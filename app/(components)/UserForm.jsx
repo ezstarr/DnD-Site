@@ -19,15 +19,16 @@ const UserForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    console.log(formData)
     setErrorMessage("")
-    const res = await fetch("/api/Users", {
+    const res = await fetch("/api/Supabase", {
       method: "POST",
-      body: JSON.string({formData}),
+      body: JSON.stringify(formData),
       "content-type": "application/json",
     })
     if (!res.ok) {
       const response = await res.json();
-      ssetErrorMessage(response.message);
+      setErrorMessage(response.message);
     } else {
       router.refresh();
       router.push("/");
@@ -40,7 +41,7 @@ const UserForm = () => {
         method="post"
       >
         <h1>Create New User</h1>
-        <label>Full Name</label>
+        <label>Username</label>
         <input
           id="name"
           name="name"
@@ -49,15 +50,7 @@ const UserForm = () => {
           required={true}
           value={formData.name}
         />
-        <label>Email</label>
-        <input
-          id="email"
-          name="email"
-          type="text"
-          onChange={handleChange}
-          required={true}
-          value={formData.email}
-        />
+        
         <label>Password</label>
         <input
           id="password"
