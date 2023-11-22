@@ -14,9 +14,9 @@ const Supa = () => {
     fetchPlayers() 
   }, []);
 
-  const player_cards = players.map(player => 
+  const player_cards = players.map((player, index) => 
     (
-    <div className="playerCard" key={player.id}>{player.username}</div>
+    <div className="playerCard" key={index}>{player.username}</div>
     ))
   return (
     <>
