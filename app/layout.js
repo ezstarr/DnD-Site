@@ -14,15 +14,16 @@ export default function RootLayout({children}) {
   // console.log(children)
   return (
     <html lang="en" suppressHydrationWarning>
-      <AuthProvider>
-        <Providers>
+      
+      <AuthProvider>   
+        <Providers>    
           <body>
             <Nav />
-            <ThemeChanger />
+            <ThemeChanger />  
             {children}
           </body>
         </Providers>
-      </AuthProvider>
+      </AuthProvider> 
     </html>
   )
 }

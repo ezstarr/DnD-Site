@@ -22,7 +22,7 @@ const Supa = () => {
     <>
     <h1>supa component</h1>
     <div className="playersGrid">
-      <div>{player_cards}</div>
+      {player_cards}
     </div>
     </>
   )
