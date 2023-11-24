@@ -5,24 +5,28 @@ import {getToken} from "next-auth/jwt"
 
 async function insertNewUser(token, user) {
   if (user) {
+
     // Set the role from the token
     const role = token.role;
     const id = token.id;
     const username = token.name;
-    // Insert the user into the database
+
+    //Insert the user into the database upon login/auth
     const supabase = createClient(  
       process.env.SUPABASE_URL, 
       process.env.ANON_KEY)
     const { data, error } = await supabase
       .from('players')
-      .upsert([{ username: username, discordUid: id, role: role}])
+      .upsert([
+        {discordUid: id, username: username, role: role}
+      ])
       .select()
 
     if (error) {
       console.error('Error inserting user into the database:', error);
       return
     }
-    console.log("Successfully added discord user to database")
+    console.log("Successfully added discord user to database", data)
     
   }
 

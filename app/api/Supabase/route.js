@@ -14,7 +14,9 @@ export async function GET(request) {
 
   const { data, error, status} = await supabase
     .from('players')
-    .select('username')
+    .select('*')
+    console.log("***")
+    console.log(data)
 
   // Check for supabase query errors
   if (error) {
@@ -32,7 +34,6 @@ export async function POST(req) {
   // } 
   const token = await getToken({req})
   console.log(token.id)
-  
   const userObj = await req.json()
   const username = userObj.name
   const password = userObj.password
